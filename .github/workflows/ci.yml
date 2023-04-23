@@ -20,7 +20,9 @@ jobs:
           distribution: 'temurin'
 
       - name: Set up Environment variables
-        run: echo "${{ secrets.DOT_ENV }}" > ./.env
+        run: |
+          echo "${{ secrets.DOT_ENV }}" > ./.env
+          echo "${{ secrets.TEST_DOT_ENV }}" > ./test.env
 
       - name: gradlew build
         run: ./gradlew build
