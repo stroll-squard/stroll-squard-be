@@ -18,6 +18,7 @@ repositories {
 }
 
 extra["testcontainersVersion"] = "1.17.6"
+val asciidoctorExt: Configuration by configurations.creating
 val snippetsDir by extra { "build/generated-snippets" }
 
 dependencies {
