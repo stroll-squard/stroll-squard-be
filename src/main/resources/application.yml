@@ -14,3 +14,31 @@ spring:
     properties:
       hibernate:
         format_sql: true
+  security:
+    oauth2:
+      client:
+        registration:
+          kakao:
+            authorization-grant-type: authorization_code
+            client-id: ${KAKAO_CLIENT_ID}
+            client-secret: ${KAKAO_CLIENT_SECRET}
+            client-name: kakao
+            redirect-uri: ${KAKAO_REDIRECT_URI}
+            client-authentication-method: POST
+            scope:
+              - profile_nickname
+              - profile_image
+              - gender
+              - birthday
+          naver:
+            authorization-grant-type: authorization_code
+            client-id: ${NAVER_CLIENT_ID}
+            client-secret: ${NAVER_CLIENT_SECRET}
+            client-name: naver
+            redirect-uri: ${NAVER_REDIRECT_URI}
+            client-authentication-method: POST
+            scope:
+              - nickname
+              - profile_image
+              - gender
+              - birthday
